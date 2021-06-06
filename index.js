@@ -32,3 +32,83 @@ function (e){
        alert('tu navegador no es compatible');  
        }
  }
+
+ /**
+ *Function for button up
+ */
+ forUp= function(){
+ 	console.log("Pinchado up");
+ }
+
+ /**
+ *Function for button left
+ */
+ forLeft= function(){
+ 	console.log("Pinchado left");
+ }
+ 
+ /**
+ *Function for button Down
+ */
+ forDown= function(){
+ 	console.log("Pinchado down");
+ }
+ /**
+ Funtion for buton right
+ **/
+ forRight= function(){
+ 	console.log("Pinchado right");
+ }
+ window.onload = function(){
+
+ 	var  buttonUp=document.getElementById("up");
+	var  buttonLeft=document.getElementById("izq");
+ 	var buttonDown= document.getElementById("down");
+ 	var buttonRight= document.getElementById("right");
+
+ 	buttonUp.onclick=forUp;
+ 	buttonLeft.onclick=forLeft;
+ 	buttonRight.onclick=forRight;
+ 	buttonDown.onclick=forDown;
+ 		document.addEventListener('keydown', function(e) {
+    switch (e.keyCode) {
+        case 37 || 65://Left arrow Pressed
+            forLeft();
+            break;
+        case 38 || 87://Up arrow pressed
+           	forUp();
+            break;
+        case 39 || 68://Right arrow pressed
+            forRight();
+            break;
+        case 40 || 83://Down arrow pressed
+            forDown();
+            break;
+    		}	
+		});
+ 	
+  }
+
+/**
+*Función depuradora para la obtención del keycode sobre teclado
+*@elEvento - Evento en una ventana cargada
+*/
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '87') {
+        // up arrow
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+    }
+
+}
